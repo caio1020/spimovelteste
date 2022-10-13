@@ -1,0 +1,58 @@
+﻿@model ClienteModel
+@{
+    ViewData["Title"] = "Alterar cliente";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Alterar cliente</h1>
+</div>
+
+<form asp-controller="Cliente" asp-action="Editar" method="post">
+
+    <input type="hidden" asp-for="ClienteId" />
+    <div class="form-group">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" asp-for="Cliente" class="form-control" placeholder="Digite o nome do cliente">
+        @Html.ValidationMessageFor(x => x.Cliente)
+    </div>
+
+    <div class="form-group">
+        <label for="nome" class="form-label">Tipo cliente</label>
+        <input type="text" asp-for="TipoCliente" class="form-control" placeholder="Digite o tipo do cliente">
+        @Html.ValidationMessageFor(x => x.TipoCliente)
+    </div>
+
+    <div class="form-group">
+        <label for="nome" class="form-label">Nome contato</label>
+        <input type="text" asp-for="NomeContato" class="form-control" placeholder="Digite o nome do contato">
+        @Html.ValidationMessageFor(x => x.NomeContato)
+    </div>
+
+    <div class="form-group">
+        <label for="nome" class="form-label">Telefone contato</label>
+        <input type="text" asp-for="TelefoneConato" class="form-control" placeholder="Digite o telefone do contato">
+        @Html.ValidationMessageFor(x => x.TelefoneConato)
+    </div>
+
+    <div class="form-group">
+        <label for="nome" class="form-label">Cidade</label>
+        <input type="text" asp-for="Cidade" class="form-control" placeholder="Digite a cidade">
+        @Html.ValidationMessageFor(x => x.Cidade)
+    </div>
+
+    <div class="form-group">
+        <label for="nome" class="form-label">Bairro</label>
+        <input type="text" asp-for="Bairro" class="form-control" placeholder="Digite o bairro">
+        @Html.ValidationMessageFor(x => x.Bairro)
+    </div>
+
+    <div class="form-group">
+        <label for="nome" class="form-label">Logradouro</label>
+        <input type="text" asp-for="Logradouro" class="form-control" placeholder="Digite o logradouro">
+        @Html.ValidationMessageFor(x => x.Logradouro)
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Alterar</button>
+    <a class="btn btn-secondary btn-block" asp-action="Index" asp-controller="Cliente" role="button">Voltar</a>
+
+</form>
